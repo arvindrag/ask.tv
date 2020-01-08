@@ -9,17 +9,18 @@ from multiprocessing import Process
 
 putio = PutIO()
 
-def e(engine, query, type=''):
-    # m = engine.get_magnet(query)
-    # if m is None:
-    #     print "!!! no good magnet yo"
-    # else:
-    #     putio.add_and_await(m)
-    INFO(putio.list_xfers)
+# def e(engine, query, type=''):
+#     m = engine.get_magnet(query)
+#     if m is None:
+#         print "!!! no good magnet yo"
+#     else:
+#         putio.add_and_await(m)
 
-for E in ENGINES:
-    p = Process(target=e, args=[E, "arrow"])
-    p.start()
+# for E in ENGINES:
+#     p = Process(target=e, args=[E, "arrow"])
+#     p.start()
+
+INFO(putio.list_xfers())
     
 
 # print r.text
