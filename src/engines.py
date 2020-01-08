@@ -22,20 +22,20 @@ class Engine:
 
     def get_magnet(e, query):
         search_url = e.get_search_url(query)
-        INFO("requesting from {} \n {}".format(e.name, search_url))
-        with requests.get(search_url) as response:
-            if response.status_code != 200:
-                INFO("an error {} occured with {} request".format(response.status_code, search_url))
-                return None
-            else:
-                INFO("request {} succeeded".format(search_url))
-                soup = Soup(response.text, features="html.parser")
-                magnet = soup.find(href = re.compile('magnet'))
-                if magnet is None:
-                    INFO("No result found in {}".format(e.name))
-                link = ['href']
-                INFO("returning magnet {}".format(magnet))
-                return magnet
+        INFO("requesting from {}".format(e.name))
+        response = requests.get(search_url)
+        if response.status_code != 200:
+            INFO("an error {} occured with {} request".format(response.status_code, search_url))
+            return None
+        else:
+            INFO("request {} succeeded".format(search_url))
+            soup = Soup(response.text, features="html.parser")
+            magnet = soup.find(href = re.compile('magnet'))
+            if magnet is None:
+                INFO("No result found in {}".format(e.name))
+            link = ['href']
+            INFO("returning magnet {}".format(magnet))
+            return magnet
 
 TPB = Engine(
     "TPB",
