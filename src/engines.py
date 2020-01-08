@@ -22,7 +22,7 @@ class Engine:
 
     def get_magnet(e, query):
         search_url = e.get_search_url(query)
-        INFO("requesting from {}".format(e.name))
+        INFO("requesting from {} \n {}".format(e.name, search_url))
         with requests.get(search_url) as response:
             if response.status_code != 200:
                 INFO("an error {} occured with {} request".format(response.status_code, search_url))
