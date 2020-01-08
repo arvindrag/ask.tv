@@ -33,9 +33,9 @@ class Engine:
             magnet = soup.find(href = re.compile('magnet'))
             if magnet is None:
                 INFO("No result found in {}".format(e.name))
-            link = ['href']
-            INFO("returning magnet {}".format(magnet))
-            return magnet
+            magnet_link = ['href']
+            INFO("returning magnet {}".format(magnet_link))
+            return magnet_link
 
 TPB = Engine(
     "TPB",
