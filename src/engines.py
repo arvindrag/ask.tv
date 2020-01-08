@@ -33,7 +33,7 @@ class Engine:
             magnet = soup.find(href = re.compile('magnet'))
             if magnet is None:
                 INFO("No result found in {}".format(e.name))
-            magnet_link = ['href']
+            magnet_link = magnet['href']
             INFO("returning magnet {}".format(magnet_link))
             return magnet_link
 
